@@ -8,7 +8,12 @@ export default function AboutUs({ title, description, image }) {
     <Section id="about-us">
       <Container maxWidth="xl" className="container">
         <div className="image-wrapper">
-          <Image src={image} alt={title} fill />
+          <Image
+            src={image}
+            alt={title}
+            fill
+            sizes="(max-width: 900px) 100vw, 5vw"
+          />
         </div>
         <div className="content-wrapper">
           <Typography

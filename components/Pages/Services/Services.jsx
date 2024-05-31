@@ -27,6 +27,7 @@ export default function Services() {
           src="/services/service-background.jpg"
           fill
           alt="person in a driver seat looking at a phone"
+          sizes="(max-width: 1000px) 0vw, 100vw"
         />
       </div>
       <div className="content-wrapper">

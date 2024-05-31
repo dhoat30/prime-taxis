@@ -40,7 +40,12 @@ export default function HomePage({ data, techLogos }) {
       <FormSection maxWidth="xl" id="book-a-taxi">
         <BookAppointmentForm showTitle={true} />
         <div className="image-wrapper">
-          <Image src="/home/form.jpg" fill alt="Vineyard on Waiheke Island" />
+          <Image
+            sizes="(max-width: 1000px) 0vw, 50vw"
+            src="/home/form.jpg"
+            fill
+            alt="Vineyard on Waiheke Island"
+          />
         </div>
       </FormSection>
       <Services />

@@ -3,7 +3,6 @@ import HomePage from '@/components/Pages/HomePage'
 export const metadata = {
   title: "Waiheke Prime Taxis Island - Affordable Local Taxi & Tour Services",
   description: "Offering reliable, friendly taxi rides and personalized island tours. Discover Waiheke's stunning landscapes and attractions with our knowledgeable local drivers.",
-  metadataBase: new URL(process.env.url),
   alternates: {
     canonical: process.env.url,
   },
@@ -12,7 +11,6 @@ export const metadata = {
     description: "Offering reliable, friendly taxi rides and personalized island tours. Discover Waiheke's stunning landscapes and attractions with our knowledgeable local drivers.",
     url: process.env.url,
     siteName: 'webduel',
-
     images: [
       {
         url: "/services/taxi.jpg",

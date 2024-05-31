@@ -15,7 +15,12 @@ export default function ServiceCard({
   return (
     <Card variant="outlined">
       <div className="image-wrapper">
-        <Image src={image} alt={title} fill />
+        <Image
+          src={image}
+          alt={title}
+          fill
+          sizes="(max-width: 750px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
       </div>
       <div className="content">
         <Typography variant="h5" component="h3">
