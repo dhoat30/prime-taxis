@@ -188,7 +188,11 @@ export default function MobileNavbar() {
             </IconButton>
           </DrawerHeader>
           <ListContainer>{menuItems}</ListContainer>
-          <Link href="/get-a-quote" style={{ margin: "16px" }}>
+          <Link
+            href="/#book-a-taxi"
+            style={{ margin: "16px" }}
+            onClick={handleDrawerClose}
+          >
             <Button
               size="large"
               variant="outlined"
@@ -203,7 +207,7 @@ export default function MobileNavbar() {
                 },
               }}
             >
-              Get instant quote
+              BOOK A TAXI
             </Button>
           </Link>
         </Drawer>

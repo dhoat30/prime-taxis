@@ -18,7 +18,7 @@ export const footerLinks = [
     {
         id: 5,
         label: "Test Website Speed",
-        url: "https://speed.webduel.co.nz"
+        url: "https://speed.primetaxis.co.nz"
     },
     {
         id: 5,

@@ -15,7 +15,15 @@ export default function Copyright() {
         <Divider orientation="vertical" flexItem className="divider" />
         <Typography variant="body1" component="div" align="center">
           Built by{" "}
-          <Link href="https://webduel.co.nz" rel="nofollow" target="_blank">
+          <Link
+            style={{
+              color: "var(--light-on-surface-variant",
+              textDecoration: "underline",
+            }}
+            href="https://primetaxis.co.nz"
+            rel="nofollow"
+            target="_blank"
+          >
             web<strong>duel</strong>
           </Link>
         </Typography>

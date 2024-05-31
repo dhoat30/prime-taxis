@@ -5,7 +5,7 @@
 
 const getBlogsData = async () => {
     try {
-        const fetchData = await fetch('https://data.webduel.co.nz/wp-json/wp/v2/posts?acf_format=standard&per_page=100');
+        const fetchData = await fetch('https://data.primetaxis.co.nz/wp-json/wp/v2/posts?acf_format=standard&per_page=100');
         const data = await fetchData.json();
         return data.map(post => `/blogs/${post.slug}`);
     } catch (error) {
@@ -17,7 +17,7 @@ const getBlogsData = async () => {
 
 const getProjectsData = async () => {
     try {
-        const fetchData = await fetch('https://data.webduel.co.nz/wp-json/wp/v2/work?acf_format=standard&per_page=100');
+        const fetchData = await fetch('https://data.primetaxis.co.nz/wp-json/wp/v2/work?acf_format=standard&per_page=100');
         const data = await fetchData.json();
         return data.map(post => `/our-work/${post.slug}`);
     } catch (error) {
@@ -28,7 +28,7 @@ const getProjectsData = async () => {
 
 
 module.exports = {
-    siteUrl: process.env.SITE_URL || 'https://webduel.co.nz',
+    siteUrl: process.env.SITE_URL || 'https://primetaxis.co.nz',
     generateRobotsTxt: true,
     sitemapSize: 1000,
     additionalPaths: async (config) => {
