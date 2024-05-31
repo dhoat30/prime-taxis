@@ -12,7 +12,7 @@ export default function AboutUs({ title, description, image }) {
             src={image}
             alt={title}
             fill
-            sizes="(max-width: 900px) 100vw, 5vw"
+            sizes="(max-width: 900px) 100vw, 50vw"
           />
         </div>
         <div className="content-wrapper">

@@ -7,7 +7,6 @@ import { Work_Sans } from 'next/font/google'
 import { ThemeProvider } from '@mui/material/styles';
 import { lightTheme } from '../utlis/themeSettings'
 
-import Script from 'next/script'
 import Header from '@/components/UI/Header/Header';
 import Footer from '@/components/UI/Footer/Footer';
 

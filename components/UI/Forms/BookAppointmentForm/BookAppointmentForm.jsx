@@ -5,6 +5,7 @@ import { appointmentFormData } from "./appointmentFormData";
 import Input from "../InputFields/Input";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useRouter } from "next/navigation";
 
 import CustomDatePicker from "../InputFields/DatePicker";
 import LoadingBtn from "../../Buttons/LoadingBtn";
@@ -15,6 +16,8 @@ export default function BookAppointmentForm({ showTitle }) {
     formName: "Taxi Booking Form",
     showTitle,
   });
+  const router = useRouter();
+
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -95,6 +98,7 @@ export default function BookAppointmentForm({ showTitle }) {
           setIsLoading(false);
           setIsSuccess(true);
           setNewSubmission(true);
+          router.push("/thank-you");
           // set initial state to empty string
           setError(false);
         } else {
