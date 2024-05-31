@@ -9,14 +9,7 @@ const nextConfig = {
         // Enables the styled-components SWC transform
         styledComponents: true
     },
-    images: {
-        remotePatterns: [{
-            protocol: 'https',
-            hostname: 'primetaxis.co.nz',
-            port: '',
-            pathname: '/**'
-        }],
-    },
+
     env: {
         url: "https://primetaxis.co.nz"
     },
