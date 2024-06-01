@@ -1,5 +1,3 @@
-import TextField from "@mui/material/TextField";
-import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Checkbox from "@mui/material/Checkbox";
 import ListItemText from "@mui/material/ListItemText";
@@ -15,6 +13,15 @@ import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormLabel from "@mui/material/FormLabel";
 import styled from "@emotion/styled";
+import dynamic from "next/dynamic";
+// Dynamically import Slider with SSR disabled
+const Select = dynamic(() => import("@mui/material/Select"), {
+  ssr: false,
+});
+const TextField = dynamic(() => import("@mui/material/TextField"), {
+  ssr: false,
+});
+
 // styling for select
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;

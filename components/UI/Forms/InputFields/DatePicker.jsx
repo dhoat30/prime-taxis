@@ -1,8 +1,15 @@
 // CustomDatePicker.js
 import React, { forwardRef } from "react";
-import DatePicker from "react-datepicker";
-import TextField from "@mui/material/TextField";
 import styled from "@emotion/styled";
+import dynamic from "next/dynamic";
+// Dynamically import Slider with SSR disabled
+const DatePicker = dynamic(() => import("react-datepicker"), {
+  ssr: false,
+});
+const TextField = dynamic(() => import("@mui/material/TextField"), {
+  ssr: false,
+});
+
 const CustomDatePicker = forwardRef(({ value, onChange }, ref) => {
   // Get the current date with time set to 00:00:00 to prevent today's past times from being selected
   const currentDate = new Date();

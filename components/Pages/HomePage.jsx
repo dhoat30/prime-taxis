@@ -4,13 +4,17 @@ import Hero from "../UI/Hero/Hero";
 import Container from "@mui/material/Container";
 import styled from "@emotion/styled";
 
-import FooterCta from "../UI/CTA/FooterCta";
-import BookAppointmentForm from "../UI/Forms/BookAppointmentForm/BookAppointmentForm";
 import Image from "next/image";
 import Services from "./Services/Services";
 import AboutUs from "./AboutUs/AboutUs";
 import TestimonialSection from "./TestimonialSection/TestimonialSection";
 import { testimonialData } from "@/utlis/testimonialData";
+
+import dynamic from "next/dynamic";
+
+const BookAppointmentForm = dynamic(() =>
+  import("../UI/Forms/BookAppointmentForm/BookAppointmentForm")
+);
 export default function HomePage({ data, techLogos }) {
   const heroData = {
     subtitle: "Taxi Driver for Hire",
@@ -38,7 +42,9 @@ export default function HomePage({ data, techLogos }) {
     <>
       <Hero data={heroData} />
       <FormSection maxWidth="xl" id="book-a-taxi">
-        <BookAppointmentForm showTitle={true} />
+        <div className="form-wrapper">
+          <BookAppointmentForm showTitle={true} />
+        </div>
         <div className="image-wrapper">
           <Image
             sizes="(max-width: 1000px) 0vw, 50vw"
@@ -73,6 +79,9 @@ const FormSection = styled(Container)`
   }
   @media (max-width: 600px) {
     padding: 0 !important;
+  }
+  .form-wrapper {
+    min-height: 600px;
   }
   .image-wrapper {
     position: relative;
