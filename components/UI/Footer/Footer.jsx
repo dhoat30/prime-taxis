@@ -13,6 +13,8 @@ import YouTube from "@mui/icons-material/YouTube";
 import Copyright from "./Copyright";
 import PhoneCircleIcon from "../Icons/PhoneCircleIcon";
 import EmailCircleIcon from "../Icons/EmailCircleIcon";
+import Fab from "@mui/material/Fab";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 export default function Footer() {
   return (
     <>
@@ -51,6 +53,7 @@ export default function Footer() {
                 component="div"
                 color="var(--light-on-surface)"
                 sx={{ marginBottom: "8px" }}
+                id="contact"
               >
                 Contact Us
               </Typography>
@@ -122,6 +125,11 @@ export default function Footer() {
       </Paper>
       {/* copyright container */}
       <Copyright />
+      <FabContainer href="#back-to-top">
+        <Fab color="primary" aria-label="back to top">
+          <ArrowUpwardIcon />
+        </Fab>
+      </FabContainer>
     </>
   );
 }
@@ -157,4 +165,10 @@ const ContainerStyled = styled(Container)`
       }
     }
   }
+`;
+const FabContainer = styled(Link)`
+  position: fixed;
+  z-index: 100;
+  right: 16px;
+  bottom: 16px;
 `;

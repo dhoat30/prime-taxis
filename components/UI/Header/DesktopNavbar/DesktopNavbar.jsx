@@ -127,6 +127,7 @@ function DesktopNavbar() {
   return (
     <>
       <AppBarContainer
+        id="back-to-top"
         position="static"
         sx={{
           display: { xs: "none", lg: "block" },

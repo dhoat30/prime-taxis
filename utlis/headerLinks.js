@@ -18,22 +18,22 @@ export const headerLinks = [
     {
         id: 2,
         label: "Our Services",
-        url: "/#our-services"
+        url: "#our-services"
     },
     {
         id: 2,
         label: "About Us",
-        url: "/#about-us"
+        url: "#about-us"
     },
     {
         id: 2,
         label: "Testimonials",
-        url: "/#testimonials"
+        url: "#testimonials"
     },
     {
         id: 6,
         label: "Contact",
-        url: "/#footer"
+        url: "#contact"
     },
 ]
 
