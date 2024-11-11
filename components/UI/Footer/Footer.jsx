@@ -13,8 +13,12 @@ import YouTube from "@mui/icons-material/YouTube";
 import Copyright from "./Copyright";
 import PhoneCircleIcon from "../Icons/PhoneCircleIcon";
 import EmailCircleIcon from "../Icons/EmailCircleIcon";
+import InstagramIcon from "../Icons/InstagramIcon";
+import TouristIcon from "../Icons/TouristIcon";
+
 import Fab from "@mui/material/Fab";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+
 export default function Footer() {
   return (
     <>
@@ -85,6 +89,38 @@ export default function Footer() {
                       color="var(--light-secondary)"
                     >
                       waihekeprimetaxis@gmail.com
+                    </Typography>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="contact-link-wrapper"
+                    href="https://www.instagram.com/waiheke_primetour/"
+                    target="_blank"
+                  >
+                  <InstagramIcon/> 
+                    <Typography
+                      variant="body1"
+                      component="span"
+                      color="var(--light-secondary)"
+                    >
+                      Follow us Instagram
+                    </Typography>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="contact-link-wrapper"
+                    href="https://www.waihekeprimetour.com/"
+                    target="_blank"
+                  >
+                  <TouristIcon/> 
+                    <Typography
+                      variant="body1"
+                      component="span"
+                      color="var(--light-secondary)"
+                    >
+                    To book a tour, please visit here. 
                     </Typography>
                   </Link>
                 </li>
