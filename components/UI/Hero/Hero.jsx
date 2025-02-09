@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/UI/Buttons/Button";
+
 export default function Hero({ data }) {
   return (
     <Section component="section">
@@ -44,10 +45,20 @@ export default function Hero({ data }) {
               {data.description}
             </Typography>
             <Box className="button-wrapper">
-              <Link href={data.ctaLink}>
+            <Link href={'tel:0210 261 3991'}>
                 <Button
                   className="button"
                   variant="contained"
+                  size="large"
+                  color="dark"
+                >
+                CALL US
+                </Button>
+              </Link>
+              <Link href={data.ctaLink}>
+                <Button
+                  className="button"
+                  variant="outlined"
                   size="large"
                   color="dark"
                 >
@@ -73,7 +84,7 @@ const Section = styled(Box)`
     }
     @media (max-width: 600px) {
       width: 100%;
-      padding-bottom: 150%;
+      padding-bottom: 170%;
     }
     img {
       object-fit: cover;
@@ -159,7 +170,10 @@ const Section = styled(Box)`
           }
         }
         .button-wrapper {
+          display: flex;
+          flex-wrap: wrap; 
           margin-top: 16px;
+          gap: 16px; 
           .button {
             background: var(--dark-primary);
             color: var(--dark-on-primary);
