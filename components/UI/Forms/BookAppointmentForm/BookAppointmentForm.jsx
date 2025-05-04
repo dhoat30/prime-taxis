@@ -72,7 +72,7 @@ export default function BookAppointmentForm({ showTitle }) {
       headers: { "Content-Type": "application/json" },
       data: formData,
     };
-    const mailText = `Date & Time: ${startDate} \n First name: ${formData.firstName} \n Pick up address: ${formData.pickup} \n Drop off address: ${formData.dropoff} \n Email address: ${formData.email} \n Phone:${formData.phone} \n Number of passengers:${formData.numberOfPassengers} \n Number of passengers:${formData.message}`;
+    const mailText = `Date & Time: ${startDate} \n First name: ${formData.firstName} \n Pick up address: ${formData.pickup} \n Drop off address: ${formData.dropoff} \n Email address: ${formData.email} \n Phone:${formData.phone} \n Number of passengers:${formData.numberOfPassengers} \n Message:${formData.message}`;
 
     // mailgun config
     var configSendMail = {
