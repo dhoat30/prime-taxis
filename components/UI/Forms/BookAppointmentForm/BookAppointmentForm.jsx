@@ -72,7 +72,7 @@ export default function BookAppointmentForm({ showTitle }) {
       headers: { "Content-Type": "application/json" },
       data: formData,
     };
-    const mailText = `Date & Time: ${startDate} \n First name: ${formData.firstName} \n Pick up address: ${formData.pickup} \n Drop off address: ${formData.dropoff} \n Email address: ${formData.email} \n Phone:${formData.phone} `;
+    const mailText = `Date & Time: ${startDate} \n First name: ${formData.firstName} \n Pick up address: ${formData.pickup} \n Drop off address: ${formData.dropoff} \n Email address: ${formData.email} \n Phone:${formData.phone} \n Number of passengers:${formData.message} \n Number of passengers:${formData.message}`;
 
     // mailgun config
     var configSendMail = {
@@ -86,14 +86,11 @@ export default function BookAppointmentForm({ showTitle }) {
         fromEmail: formData.email,
       },
     };
-    console.log(mailText);
     Promise.all([axios(configHubspot), axios(configSendMail)])
       .then(function (responses) {
-        console.log(responses);
         // responses[0] is the response from create-hubspot-contact
         // responses[1] is the response from sendmail
-        console.log(responses);
-        if (responses[0].status === 200) {
+        if (responses[1].status === 200) {
           console.log("sucesss");
           setIsLoading(false);
           setIsSuccess(true);
@@ -119,33 +116,63 @@ export default function BookAppointmentForm({ showTitle }) {
         setNewSubmission(false);
       });
   };
+
   // loop over all the input fields
   const formInputs = appointmentFormData.map((field, index) => {
     const isSelectMultiple = field.type === "select" && field.multiple; // Example condition
-    return (
-      <Input
-        key={index}
-        label={field.label}
-        type={field.type}
-        value={
-          isSelectMultiple ? formData[field.id] || [] : formData[field.id] || ""
-        }
-        onChange={(e) =>
-          handleChange(field.id, e.target.value, isSelectMultiple)
-        }
-        onBlur={
-          field.required ? () => handleBlur(field.id, field.validation) : null
-        } //check if the field is required then call the function
-        required={field.required}
-        autoComplete={field.autoComplete}
-        isInvalid={errors[field.id]}
-        errorMessage={field.errorMessage}
-        options={field.options}
-        multipleValue={field.multiple}
-      />
-    );
-  });
 
+    if(field.type === "tel") {
+      return (
+        <Input
+          key={index}
+          label={field.label}
+          type={field.type}
+          value={
+            isSelectMultiple ? formData[field.id] || [] : formData[field.id] || ""
+          }
+          onChange={(e) =>
+             handleChange(field.id, `+${e}`, isSelectMultiple)
+          }
+          onBlur={
+            field.required ? () => handleBlur(field.id, field.validation) : null
+          } //check if the field is required then call the function
+          required={field.required}
+          autoComplete={field.autoComplete}
+          isInvalid={errors[field.id]}
+          errorMessage={field.errorMessage}
+          options={field.options}
+          multipleValue={field.multiple}
+        />
+      );
+    } 
+    else { 
+      return (
+        <Input
+          key={index}
+          label={field.label}
+          type={field.type}
+          value={
+            isSelectMultiple ? formData[field.id] || [] : formData[field.id] || ""
+          }
+          onChange={(e) =>
+             handleChange(field.id, e.target.value, isSelectMultiple)
+          }
+          onBlur={
+            field.required ? () => handleBlur(field.id, field.validation) : null
+          } //check if the field is required then call the function
+          required={field.required}
+          autoComplete={field.autoComplete}
+          isInvalid={errors[field.id]}
+          errorMessage={field.errorMessage}
+          options={field.options}
+          multipleValue={field.multiple}
+        />
+      );
+      
+
+    }
+
+  });
   return (
     <ContainerStyled>
       <Paper className="wrapper" variant="outlined">

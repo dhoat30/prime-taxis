@@ -12,7 +12,6 @@ const WebsiteEnquiryForm = dynamic(() =>
 );
 
 export default function WebsiteEnquiryPage({ data }) {
-  console.log(data);
   return (
     <ThemeProvider theme={lightTheme}>
       <Section>

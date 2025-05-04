@@ -22,7 +22,6 @@ function DesktopNavbar() {
   const isActive = (path) => {
     return pathname === path;
   };
-  console.log(pathname);
   // drop down logic
   useEffect(() => {
     function handleClickOutside(event) {

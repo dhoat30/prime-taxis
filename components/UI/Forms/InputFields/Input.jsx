@@ -14,6 +14,9 @@ import FormHelperText from "@mui/material/FormHelperText";
 import FormLabel from "@mui/material/FormLabel";
 import styled from "@emotion/styled";
 import dynamic from "next/dynamic";
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/material.css'; 
+// or 'style.css' for plain styling
 // Dynamically import Slider with SSR disabled
 const Select = dynamic(() => import("@mui/material/Select"), {
   ssr: false,
@@ -168,7 +171,31 @@ export default function Input({
         </FormHelperText>
       </FormControlStyled>
     );
-  } else {
+  } 
+  else if (type === "tel") {
+    return (
+      <div style={{marginTop: "24px"}}>
+            <PhoneInput
+        country={'nz'}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        inputStyle={{
+          width: '100%',
+          borderColor: required && isInvalid ? '#d32f2f' : undefined,
+        }}
+        buttonStyle={{
+          borderColor: required && isInvalid ? '#d32f2f' : undefined,
+        }}
+      />
+      {required && isInvalid && (
+        <FormHelperText error>{errorMessage}</FormHelperText>
+      )}
+      </div>
+    )
+  
+  } 
+  else {
     return (
       <TextFieldStyle
         sx={{

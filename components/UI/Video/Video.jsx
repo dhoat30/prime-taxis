@@ -8,7 +8,6 @@ import Container from "@mui/material/Container";
 export default function Video({ videoID, placeholderImage, className }) {
   const [isClient, setIsClient] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false); // New state for tracking video load
-  console.log(videoLoaded);
   useEffect(() => {
     setIsClient(true);
   }, []);
