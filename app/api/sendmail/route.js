@@ -16,9 +16,12 @@ export async function POST(req, res) {
   const url = `https://api.mailgun.net/v3/${DOMAIN}/messages`;
   // Prepare the form data as URL encoded
   const formData = new URLSearchParams();
-  formData.append('from', fromEmail);
+  formData.append('from', `Waiheke Prime Taxis <no-reply@noreply.webduel.co.nz>`);
+  formData.append('h:Reply-To', fromEmail);  
+  formData.append('h:X-Form-From', fromEmail);  // optional: helps filtering
+
   formData.append('to', 'waihekeprimetaxis@gmail.com');
-  formData.append('subject', formName);
+  formData.append('subject', `[${formName}] New website enquiry`);
   formData.append('text', mailText);
 
 
